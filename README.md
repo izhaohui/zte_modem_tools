@@ -58,3 +58,21 @@ options:
 
 https://github.com/douniwan5788/zte_modem_tools
 ```
+
+# persist root
+```
+sendcmd 1 DB p TelnetCfg
+sendcmd 1 DB set TelnetCfg 0 Lan_Enable 1
+sendcmd 1 DB set TelnetCfg 0 TS_UName root
+sendcmd 1 DB set TelnetCfg 0 TSLan_UName root
+sendcmd 1 DB set TelnetCfg 0 TS_UPwd Zte521
+sendcmd 1 DB set TelnetCfg 0 TSLan_UPwd Zte521
+sendcmd 1 DB set TelnetCfg 0 Max_Con_Num 99
+sendcmd 1 DB set TelnetCfg 0 ExitTime 999999
+sendcmd 1 DB set TelnetCfg 0 InitSecLvl 3
+sendcmd 1 DB set TelnetCfg 0 CloseServerTime 9999999
+sendcmd 1 DB set TelnetCfg 0 Lan_EnableAfterOlt 1
+sendcmd 1 DB save
+
+killall telnetd
+```
